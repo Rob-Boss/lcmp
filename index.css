@@ -89,12 +89,6 @@ body {
     padding-bottom: 0.75rem;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
 .header-titles {
     display: flex;
     flex-direction: column;
@@ -102,8 +96,9 @@ body {
 }
 
 .brand-logo {
-    font-size: 1.8rem;
-    line-height: 1;
+    font-size: 1.7rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
 }
 
 .portal-title {
