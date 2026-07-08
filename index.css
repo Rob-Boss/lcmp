@@ -15,6 +15,31 @@
     --accent-amber-glow: rgba(209, 161, 83, 0.12);
     --accent-sage-glow: rgba(61, 82, 69, 0.12);
 
+    /* Expanded Color Palette for Bento Cards */
+    --bg-opportunities: hsl(141, 16%, 94%);
+    --text-opportunities: #2D3E33;
+    --border-opportunities: rgba(61, 82, 69, 0.2);
+
+    --bg-analytics: hsl(37, 26%, 95%);
+    --text-analytics: #8F6927;
+    --border-analytics: rgba(209, 161, 83, 0.2);
+
+    --bg-docs: hsl(80, 16%, 95%);
+    --text-docs: #4A563F;
+    --border-docs: rgba(74, 86, 63, 0.2);
+
+    --bg-media: hsl(205, 18%, 94%);
+    --text-media: #354B5E;
+    --border-media: rgba(53, 75, 94, 0.2);
+
+    --bg-crm: hsl(17, 24%, 95%);
+    --text-crm: #A54B2A;
+    --border-crm: rgba(194, 94, 58, 0.2);
+
+    --bg-presskit: hsl(340, 14%, 95%);
+    --text-presskit: #6B3444;
+    --border-presskit: rgba(107, 52, 68, 0.2);
+
     /* Fonts */
     --font-serif: 'Fraunces', Georgia, serif;
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -149,32 +174,67 @@ body {
 #tile-opportunities {
     grid-column: 1 / 3;
     grid-row: 1;
+    background: var(--bg-opportunities);
+    border-color: var(--border-opportunities);
+}
+#tile-opportunities .tile-title, 
+#tile-opportunities .action-link {
+    color: var(--text-opportunities);
 }
 
 #tile-analytics {
     grid-column: 3 / 5;
     grid-row: 1;
+    background: var(--bg-analytics);
+    border-color: var(--border-analytics);
+}
+#tile-analytics .tile-title, 
+#tile-analytics .action-link {
+    color: var(--text-analytics);
 }
 
 #tile-docs {
     grid-column: 1 / 3;
     grid-row: 2;
+    background: var(--bg-docs);
+    border-color: var(--border-docs);
+}
+#tile-docs .tile-title, 
+#tile-docs .action-link {
+    color: var(--text-docs);
 }
 
 #tile-crm {
     grid-column: 1 / 3;
     grid-row: 3;
+    background: var(--bg-crm);
+    border-color: var(--border-crm);
+}
+#tile-crm .tile-title, 
+#tile-crm .action-link {
+    color: var(--text-crm);
 }
 
 #tile-media {
     grid-column: 3;
     grid-row: 2 / 4;
+    background: var(--bg-media);
+    border-color: var(--border-media);
+}
+#tile-media .tile-title, 
+#tile-media .action-link {
+    color: var(--text-media);
 }
 
 #tile-presskit {
     grid-column: 4;
     grid-row: 2 / 4;
-    background: radial-gradient(circle at top right, rgba(229, 223, 211, 0.12) 0%, rgba(255, 255, 255, 0.75) 100%);
+    background: radial-gradient(circle at top right, rgba(107, 52, 68, 0.04) 0%, var(--bg-presskit) 100%);
+    border-color: var(--border-presskit);
+}
+#tile-presskit .tile-title, 
+#tile-presskit .action-link {
+    color: var(--text-presskit);
 }
 
 
