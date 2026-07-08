@@ -17,18 +17,20 @@
     <div class="app-container">
         <!-- Editorial Header -->
         <header class="app-header">
-            <div class="brand-block">
+            <div class="header-left">
                 <span class="brand-logo">⛺</span>
-                <span class="brand-name">Lantern Camp</span>
+                <div class="header-titles">
+                    <span class="brand-name">Lantern Camp</span>
+                    <h1 class="portal-title">Camp Marketing Portal</h1>
+                </div>
             </div>
-            <h1 class="portal-title">Camp Marketing Portal</h1>
             <p class="portal-subtitle">Central Workspace & Live Command Center (LCMP)</p>
         </header>
 
         <!-- Bento Grid Layout -->
         <main class="bento-grid">
-            <!-- 1. Opportunities Hub (Large 2x2) -->
-            <section id="tile-opportunities" class="bento-tile tile-large-2x2 card-glow-terracotta" onclick="navigateTo('https://lantern-living-documents.vercel.app/opportunities.html')">
+            <!-- 1. Opportunities Hub (Wide 2x1) -->
+            <section id="tile-opportunities" class="bento-tile tile-wide-2x1 card-glow-terracotta" onclick="navigateTo('https://lantern-living-documents.vercel.app/opportunities.html')">
                 <div class="tile-content">
                     <div class="tile-header">
                         <span class="tile-badge badge-terracotta">Lead Generation</span>
@@ -80,8 +82,8 @@
                 </div>
             </section>
 
-            <!-- 4. Media Selects (Square 1x1 with slideshow) -->
-            <section id="tile-media" class="bento-tile tile-square-1x1 card-glow-forest" onclick="navigateTo('https://www.dropbox.com/sh/photos_working')">
+            <!-- 4. Media Selects (Tall 1x2 with slideshow) -->
+            <section id="tile-media" class="bento-tile tile-tall-1x2 card-glow-forest" onclick="navigateTo('https://www.dropbox.com/sh/photos_working')">
                 <div id="media-slideshow" class="slideshow-bg">
                     <!-- Background slides loaded dynamically in JS -->
                 </div>
@@ -96,8 +98,8 @@
                 </div>
             </section>
 
-            <!-- 5. Outreach CRM (Square 1x1) -->
-            <section id="tile-crm" class="bento-tile tile-square-1x1 card-glow-terracotta" onclick="navigateTo('https://docs.google.com/spreadsheets/d/1CommunityRelationships')">
+            <!-- 5. Outreach CRM (Wide 2x1) -->
+            <section id="tile-crm" class="bento-tile tile-wide-2x1 card-glow-terracotta" onclick="navigateTo('https://docs.google.com/spreadsheets/d/1CommunityRelationships')">
                 <div class="tile-content">
                     <span class="tile-badge badge-terracotta">Outreach CRM</span>
                     <h2 class="tile-title">Contact Database</h2>
