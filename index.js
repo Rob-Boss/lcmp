@@ -60,37 +60,7 @@ async function fetchOpportunitiesCount() {
     }
 }
 
-// 2. Media Card Slideshow Background Cycle
-const slideshowImages = [
-    'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80', // Premium Cabin in Woods
-    'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80', // Campfire and Tall Pine Trees
-    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80'  // Misty Forest Ridge View
-];
-
-let currentSlideIndex = 0;
-
-function runMediaSlideshow() {
-    const slideshowEl = document.getElementById('media-slideshow');
-    if (!slideshowEl) return;
-
-    // Set initial image
-    slideshowEl.style.backgroundImage = `url('${slideshowImages[currentSlideIndex]}')`;
-
-    // Rotate every 5 seconds
-    setInterval(() => {
-        currentSlideIndex = (currentSlideIndex + 1) % slideshowImages.length;
-        
-        // Preload next image to avoid flashing white space
-        const tempImg = new Image();
-        tempImg.src = slideshowImages[currentSlideIndex];
-        tempImg.onload = () => {
-            slideshowEl.style.backgroundImage = `url('${slideshowImages[currentSlideIndex]}')`;
-        };
-    }, 5000);
-}
-
 // Initializers
 document.addEventListener('DOMContentLoaded', () => {
     fetchOpportunitiesCount();
-    runMediaSlideshow();
 });
