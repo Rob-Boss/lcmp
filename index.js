@@ -123,7 +123,7 @@ async function fetchAddisonTasks() {
                 const prefixLower = task.prefix.toLowerCase();
                 if (prefixLower.includes('redesign')) {
                     targetUrl = 'https://lanterncamp.com';
-                } else if (prefixLower.includes('press kit')) {
+                } else if (prefixLower.includes('outreach')) {
                     targetUrl = 'https://lantern-digital-press-kit.vercel.app/outreach';
                 }
 
