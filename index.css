@@ -388,11 +388,10 @@ body {
 
 /* RESPONSIVE LAYOUT (MEDIA QUERIES) */
 
-/* 1. Tablets / Laptops in Portrait or Medium Viewports */
-@media (max-width: 950px) {
-    body {
-        overflow: auto; /* Fall back to scroll if viewport is too small */
 @media (max-width: 1024px) {
+    body {
+        overflow-y: auto;
+    }
     .bento-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -411,7 +410,7 @@ body {
 .todo-list-portal {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.8rem;
     margin-top: 0.5rem;
     width: 100%;
 }
@@ -419,8 +418,8 @@ body {
 .todo-item-portal {
     display: flex;
     align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0.5rem 0.75rem;
+    gap: 0.8rem;
+    padding: 0.6rem 0.9rem;
     border-radius: 6px;
     background: rgba(253, 251, 247, 0.25);
     border: 1px solid rgba(53, 69, 53, 0.04);
@@ -429,12 +428,12 @@ body {
 
 .todo-item-portal:hover {
     background: rgba(253, 251, 247, 0.6);
-    border-color: rgba(53, 69, 53, 0.1);
+    border-color: rgba(53, 69, 53, 0.15);
 }
 
 .todo-checkbox-portal {
     flex-shrink: 0;
-    margin-top: 3px;
+    margin-top: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -442,24 +441,34 @@ body {
 
 .todo-text-portal {
     font-family: var(--font-sans);
-    font-size: 0.82rem;
+    font-size: 0.92rem;
     line-height: 1.5;
     color: var(--color-charcoal);
 }
 
 .todo-prefix-portal {
     font-weight: 700;
-    color: #8C3B3B; /* Terracotta style prefix */
+    color: #A24135; /* Earthy Rust/Terracotta */
     margin-right: 0.25rem;
+    transition: text-decoration 0.2s;
 }
 
 .todo-desc-portal {
-    color: rgba(34, 40, 37, 0.85);
+    color: #2E3A35; /* Deep Forest Charcoal/Sage */
 }
 
-/* Bones for future link behavior (not active yet) */
+/* Clickable Link Behavior */
 .todo-item-portal.has-link {
-    cursor: default; /* Kept default, not pointer yet */
+    cursor: pointer;
+}
+
+.todo-item-portal.has-link:hover {
+    background: rgba(140, 59, 59, 0.05); /* Soft Terracotta tint */
+    border-color: rgba(140, 59, 59, 0.15);
+}
+
+.todo-item-portal.has-link:hover .todo-prefix-portal {
+    text-decoration: underline;
 }
 
 /* Completed Tasks Style */

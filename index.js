@@ -117,12 +117,25 @@ async function fetchAddisonTasks() {
 
             // Render text with prefix if present
             let textHtml = '';
+            let targetUrl = '';
+
             if (task.prefix) {
                 const prefixLower = task.prefix.toLowerCase();
-                const hasPotentialLink = prefixLower.includes('review') || prefixLower.includes('setup');
+                if (prefixLower.includes('redesign')) {
+                    targetUrl = 'https://lanterncamp.com';
+                } else if (prefixLower.includes('press kit')) {
+                    targetUrl = 'outreach.html';
+                }
 
-                if (hasPotentialLink) {
+                if (targetUrl) {
                     itemEl.classList.add('has-link');
+                    itemEl.addEventListener('click', () => {
+                        if (targetUrl.startsWith('http')) {
+                            window.open(targetUrl, '_blank');
+                        } else {
+                            window.location.href = targetUrl;
+                        }
+                    });
                 }
 
                 textHtml = `
