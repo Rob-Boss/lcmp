@@ -57,20 +57,9 @@
             </section>
 
             <!-- 3. Digital Press Kit (Tall 1x2) -->
-            <section id="tile-presskit" class="bento-tile tile-tall-1x2 card-glow-forest" onclick="navigateTo('https://www.dropbox.com/sh/2v1axt4n7x4b1g8/AAC_LanternCampPressKit')">
-                <div class="blueprint-bg">
-                    <!-- Stylized SVG Blueprint overlay representing a field cabin layout -->
-                    <svg viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 20 H90 V180 H10 Z" stroke="rgba(53, 69, 53, 0.08)" stroke-width="1.5" stroke-dasharray="4 4"/>
-                        <path d="M20 30 H80 V80 H20 Z" stroke="rgba(53, 69, 53, 0.05)" stroke-width="1"/>
-                        <path d="M20 90 H80 V170 H20 Z" stroke="rgba(53, 69, 53, 0.05)" stroke-width="1"/>
-                        <circle cx="50" cy="55" r="8" stroke="rgba(53, 69, 53, 0.06)" stroke-width="1"/>
-                        <line x1="50" y1="30" x2="50" y2="80" stroke="rgba(53, 69, 53, 0.04)" stroke-width="1"/>
-                        <line x1="20" y1="130" x2="80" y2="130" stroke="rgba(53, 69, 53, 0.04)" stroke-width="1"/>
-                    </svg>
-                </div>
+            <section id="tile-presskit" class="bento-tile tile-tall-1x2 card-glow-presskit" onclick="navigateTo('https://www.dropbox.com/sh/2v1axt4n7x4b1g8/AAC_LanternCampPressKit')">
                 <div class="tile-content">
-                    <span class="tile-badge badge-forest">Public Relations</span>
+                    <span class="tile-badge badge-presskit">Public Relations</span>
                     <h2 class="tile-title">Digital Press Kit</h2>
                     <p class="tile-description">Lookbooks, press releases, high-res cabin renders, and editorial assets.</p>
                 </div>
@@ -92,9 +81,9 @@
             </section>
 
             <!-- 5. Outreach CRM (Wide 2x1) -->
-            <section id="tile-crm" class="bento-tile tile-wide-2x1 card-glow-terracotta" onclick="navigateTo('https://docs.google.com/spreadsheets/d/1CommunityRelationships')">
+            <section id="tile-crm" class="bento-tile tile-wide-2x1 card-glow-crm" onclick="navigateTo('https://docs.google.com/spreadsheets/d/1CommunityRelationships')">
                 <div class="tile-content">
-                    <span class="tile-badge badge-terracotta">Outreach CRM</span>
+                    <span class="tile-badge badge-crm">Outreach CRM</span>
                     <h2 class="tile-title">Contact Database</h2>
                     <p class="tile-description">Manage journalists, editors, local hosts, and community partners.</p>
                 </div>
@@ -104,9 +93,9 @@
             </section>
 
             <!-- 6. Workspace Documents (Wide 2x1) -->
-            <section id="tile-docs" class="bento-tile tile-wide-2x1 card-glow-amber" onclick="navigateTo('https://lantern-living-documents.vercel.app')">
+            <section id="tile-docs" class="bento-tile tile-wide-2x1 card-glow-docs" onclick="navigateTo('https://lantern-living-documents.vercel.app')">
                 <div class="tile-content">
-                    <span class="tile-badge badge-amber">Internal Wiki</span>
+                    <span class="tile-badge badge-docs">Internal Wiki</span>
                     <h2 class="tile-title">Living Documents</h2>
                     <p class="tile-description">Operations runbooks, PR writing guides, and campaign outreach schedules.</p>
                 </div>
@@ -116,16 +105,16 @@
             </section>
 
             <!-- 7. Addison's Live Tasks (Full-width 4x1) -->
-            <section id="tile-addison-todo" class="bento-tile tile-full-4x1 card-glow-forest" style="cursor: default;">
+            <section id="tile-addison-todo" class="bento-tile tile-full-4x1 card-glow-todo" style="cursor: default;">
                 <div class="tile-content">
-                    <div class="tile-header" style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                        <span class="tile-badge badge-forest">Active Priorities</span>
-                        <div class="live-count-badge" style="background: rgba(53, 69, 53, 0.08); color: #354535;">
-                            <span class="pulse-dot" style="background-color: #354535;"></span>
+                    <div class="tile-header" style="margin-bottom: 0.3rem; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <span class="tile-badge badge-todo">Active Priorities</span>
+                        <div class="live-count-badge" style="background: rgba(28, 53, 45, 0.08); color: #1C352D;">
+                            <span class="pulse-dot" style="background-color: #1C352D;"></span>
                             <span>Email Auto-Sync</span>
                         </div>
                     </div>
-                    <h2 class="tile-title" style="margin-bottom: 1rem;">Addison's Live Tasks</h2>
+                    <h2 class="tile-title" style="margin-bottom: 0.5rem;">Addison's Live Tasks</h2>
                     <div id="addison-tasks-list" class="todo-list-portal">
                         <div style="color: rgba(34, 40, 37, 0.6); font-size: 0.85rem; font-style: italic;">Loading tasks...</div>
                     </div>
