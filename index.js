@@ -34,17 +34,17 @@ async function fetchOpportunitiesCount() {
         
         if (pendingCount > 0) {
             countValEl.textContent = `${pendingCount} Pending Review`;
-            countContainer.style.background = 'rgba(194, 94, 58, 0.15)'; // Highlight style
-            countValEl.style.color = '#C25E3A';
+            countContainer.style.background = 'rgba(140, 59, 59, 0.08)'; // Highlight style (Terracotta)
+            countValEl.style.color = '#8C3B3B';
             if (document.querySelector('#tile-opportunities .pulse-dot')) {
-                document.querySelector('#tile-opportunities .pulse-dot').style.backgroundColor = '#C25E3A';
+                document.querySelector('#tile-opportunities .pulse-dot').style.backgroundColor = '#8C3B3B';
             }
         } else {
             countValEl.textContent = 'Queue Clean';
-            countContainer.style.background = 'rgba(61, 82, 69, 0.15)'; // Quiet style
-            countValEl.style.color = '#3D5245';
+            countContainer.style.background = 'rgba(53, 69, 53, 0.08)'; // Quiet style (Forest Green)
+            countValEl.style.color = '#354535';
             if (document.querySelector('#tile-opportunities .pulse-dot')) {
-                document.querySelector('#tile-opportunities .pulse-dot').style.backgroundColor = '#3D5245';
+                document.querySelector('#tile-opportunities .pulse-dot').style.backgroundColor = '#354535';
             }
         }
     } catch (err) {
