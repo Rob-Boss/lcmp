@@ -124,7 +124,7 @@ async function fetchAddisonTasks() {
                 if (prefixLower.includes('redesign')) {
                     targetUrl = 'https://lanterncamp.com';
                 } else if (prefixLower.includes('press kit')) {
-                    targetUrl = 'outreach.html';
+                    targetUrl = 'https://lantern-digital-press-kit.vercel.app/outreach';
                 }
 
                 if (targetUrl) {
