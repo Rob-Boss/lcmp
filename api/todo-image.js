@@ -104,7 +104,7 @@ export default async function handler(req, res) {
       }
     }
 
-    // 3. Render SVG
+    // 3. Render SVG (Scandinavian Editorial Light Theme)
     const svgWidth = 600;
     const itemSpacing = 16;
     const lineHeight = 20;
@@ -117,55 +117,47 @@ export default async function handler(req, res) {
       const itemHeight = textLines.length * lineHeight;
       const checkboxY = currentY + 5; 
 
+      // Render Checkbox / Indicator SVG
       let checkboxSvg = '';
       if (task.status === 'completed') {
         checkboxSvg = `
-          <!-- Completed Checkbox -->
-          <rect x="22" y="${checkboxY - 13}" width="16" height="16" rx="4" fill="#2D5A27" stroke="#2D5A27" stroke-width="1.5" />
+          <!-- Completed Checkbox (Forest Green fill) -->
+          <rect x="22" y="${checkboxY - 13}" width="16" height="16" rx="4" fill="#1C352D" stroke="#1C352D" stroke-width="1.5" />
           <path d="M 26 ${checkboxY - 6} L 29 ${checkboxY - 3} L 34 ${checkboxY - 9}" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         `;
       } else if (task.status === 'in-progress') {
         checkboxSvg = `
-          <!-- In Progress Checkbox -->
-          <circle cx="30" cy="${checkboxY - 5}" r="8" fill="none" stroke="#EBB862" stroke-width="2" />
-          <path d="M 30 ${checkboxY - 5} L 30 ${checkboxY - 11} A 6 6 0 0 1 36 ${checkboxY - 5} Z" fill="#EBB862" />
+          <!-- In Progress Checkbox (Soft gold circle/pie) -->
+          <circle cx="30" cy="${checkboxY - 5}" r="8" fill="none" stroke="#C29D66" stroke-width="2" />
+          <path d="M 30 ${checkboxY - 5} L 30 ${checkboxY - 11} A 6 6 0 0 1 36 ${checkboxY - 5} Z" fill="#C29D66" />
         `;
       } else {
         checkboxSvg = `
-          <!-- Pending Checkbox -->
-          <rect x="22" y="${checkboxY - 13}" width="16" height="16" rx="4" fill="none" stroke="#556B61" stroke-width="1.5" />
+          <!-- Pending Checkbox (Muted gray-green border) -->
+          <rect x="22" y="${checkboxY - 13}" width="16" height="16" rx="4" fill="none" stroke="#738A80" stroke-width="1.5" />
         `;
       }
 
+      // Render Text lines
       let textLinesSvg = '';
       for (let i = 0; i < textLines.length; i++) {
         const lineY = currentY + (i * lineHeight);
         
         if (task.status === 'completed') {
-          textLinesSvg += `<text x="52" y="${lineY}" fill="#788F84" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" opacity="0.6" text-decoration="line-through">${escapeXml(textLines[i])}</text>`;
-        } else if (task.status === 'in-progress') {
-          if (i === 0 && task.prefix && textLines[0].startsWith(task.prefix)) {
-            const restOfFirstLine = textLines[0].slice(task.prefix.length);
-            textLinesSvg += `
-              <text x="52" y="${lineY}" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">
-                <tspan font-weight="600" fill="#EBB862">${escapeXml(task.prefix)}</tspan>
-                <tspan fill="#F4F0EA">${escapeXml(restOfFirstLine)}</tspan>
-              </text>
-            `;
-          } else {
-            textLinesSvg += `<text x="52" y="${lineY}" fill="#F4F0EA" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">${escapeXml(textLines[i])}</text>`;
-          }
+          // Completed task text (Muted green-gray, line-through)
+          textLinesSvg += `<text x="52" y="${lineY}" fill="#738A80" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" opacity="0.5" text-decoration="line-through">${escapeXml(textLines[i])}</text>`;
         } else {
+          // Active task text (Bold prefix in Deep Pine, body in deep charcoal)
           if (i === 0 && task.prefix && textLines[0].startsWith(task.prefix)) {
             const restOfFirstLine = textLines[0].slice(task.prefix.length);
             textLinesSvg += `
               <text x="52" y="${lineY}" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">
-                <tspan font-weight="600" fill="#FFFFFF">${escapeXml(task.prefix)}</tspan>
-                <tspan fill="#F4F0EA">${escapeXml(restOfFirstLine)}</tspan>
+                <tspan font-weight="600" fill="#1C352D">${escapeXml(task.prefix)}</tspan>
+                <tspan fill="#1A2521">${escapeXml(restOfFirstLine)}</tspan>
               </text>
             `;
           } else {
-            textLinesSvg += `<text x="52" y="${lineY}" fill="#F4F0EA" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">${escapeXml(textLines[i])}</text>`;
+            textLinesSvg += `<text x="52" y="${lineY}" fill="#1A2521" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">${escapeXml(textLines[i])}</text>`;
           }
         }
       }
@@ -182,7 +174,7 @@ export default async function handler(req, res) {
 
     if (tasks.length === 0) {
       renderedItemsG.push(`
-        <text x="52" y="${currentY}" fill="#788F84" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-style="italic">
+        <text x="52" y="${currentY}" fill="#738A80" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-style="italic">
           No active tasks on this list.
         </text>
       `);
@@ -191,27 +183,25 @@ export default async function handler(req, res) {
 
     const svgHeight = currentY + 45;
 
+    // Build overall SVG using warm sand background and pine accents
     const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" width="${svgWidth}" height="${svgHeight}" viewBox="0 0 ${svgWidth} ${svgHeight}" fill="none">
-  <defs>
-    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="100%">
-      <stop offset="0%" stop-color="#0E1F1A" />
-      <stop offset="100%" stop-color="#081310" />
-    </linearGradient>
-  </defs>
+  <!-- Clean Warm Off-White Background container -->
+  <rect width="${svgWidth}" height="${svgHeight}" rx="8" fill="#FBFAF8" stroke="#E5E9E7" stroke-width="1.5" />
 
-  <rect width="${svgWidth}" height="${svgHeight}" rx="8" fill="url(#bg-grad)" stroke="#1B3A31" stroke-width="1.5" />
+  <!-- Header -->
+  <text x="22" y="32" fill="#738A80" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.5">LANTERN CAMP</text>
+  <text x="22" y="52" fill="#1C352D" font-family="system-ui, -apple-system, sans-serif" font-size="15.5" font-weight="700">${escapeXml(fileName.replace('.md', '').replace('-todo', ' to-do list').toUpperCase())}</text>
+  <line x1="22" y1="62" x2="${svgWidth - 22}" y2="62" stroke="#E5E9E7" stroke-width="1" />
 
-  <text x="22" y="32" fill="#8BA398" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.5">LANTERN CAMP</text>
-  <text x="22" y="52" fill="#F4F0EA" font-family="system-ui, -apple-system, sans-serif" font-size="15.5" font-weight="700">${escapeXml(fileName.replace('.md', '').replace('-todo', ' to-do list').toUpperCase())}</text>
-  <line x1="22" y1="62" x2="${svgWidth - 22}" y2="62" stroke="#1B3A31" stroke-width="1" />
-
+  <!-- Task Items -->
   ${renderedItemsG.join('\n')}
 
-  <line x1="22" y1="${svgHeight - 35}" x2="${svgWidth - 22}" y2="${svgHeight - 35}" stroke="#1B3A31" stroke-width="1" />
-  <text x="22" y="${svgHeight - 18}" fill="#556B61" font-family="system-ui, -apple-system, sans-serif" font-size="9.5">LIVE SYNCED: ${formatEstDate(new Date())}</text>
-  <text x="${svgWidth - 36}" y="${svgHeight - 18}" fill="#788F84" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" text-anchor="end">LIVE EMAIL AUTO-SYNC</text>
-  <circle cx="${svgWidth - 26}" cy="${svgHeight - 21}" r="3" fill="#4CAF50" />
+  <!-- Footer -->
+  <line x1="22" y1="${svgHeight - 35}" x2="${svgWidth - 22}" y2="${svgHeight - 35}" stroke="#E5E9E7" stroke-width="1" />
+  <text x="22" y="${svgHeight - 18}" fill="#738A80" font-family="system-ui, -apple-system, sans-serif" font-size="9.5">LIVE SYNCED: ${formatEstDate(new Date())}</text>
+  <text x="${svgWidth - 36}" y="${svgHeight - 18}" fill="#738A80" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" text-anchor="end">LIVE EMAIL AUTO-SYNC</text>
+  <circle cx="${svgWidth - 26}" cy="${svgHeight - 21}" r="3" fill="#2D5A27" />
 </svg>
     `.trim();
 
@@ -230,9 +220,9 @@ export default async function handler(req, res) {
 function serveErrorSvg(res, message) {
   const errorSvg = `
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="80" fill="none">
-  <rect width="600" height="80" rx="8" fill="#1C1313" stroke="#5E2C2C" stroke-width="1.5" />
-  <text x="20" y="32" fill="#FF8A8A" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" letter-spacing="1">ERROR GENERATING WIDGET</text>
-  <text x="20" y="55" fill="#E0C2C2" font-family="system-ui, -apple-system, sans-serif" font-size="13">${escapeXml(message)}</text>
+  <rect width="600" height="80" rx="8" fill="#FDF8F8" stroke="#E8C2C2" stroke-width="1.5" />
+  <text x="20" y="32" fill="#8C3B3B" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" letter-spacing="1">ERROR GENERATING WIDGET</text>
+  <text x="20" y="55" fill="#5C2D2D" font-family="system-ui, -apple-system, sans-serif" font-size="13">${escapeXml(message)}</text>
 </svg>
   `.trim();
   
