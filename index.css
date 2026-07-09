@@ -52,10 +52,10 @@
 
 /* Reset and Viewport Lock */
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Lock scroll on desktop */
+    overflow-y: auto; /* Allow vertical scrolling if viewport is small */
 }
 
 body {
@@ -72,8 +72,8 @@ body {
 .app-container {
     width: 100%;
     max-width: 1200px;
-    height: 100%;
-    max-height: 94vh; /* Fits perfectly in the viewport */
+    min-height: 90vh;
+    padding-bottom: 2rem; /* Cushion bottom of page */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -132,7 +132,7 @@ body {
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr); /* 4 rows */
+    grid-auto-rows: minmax(125px, auto); /* Compact rows that don't stretch layout */
     gap: var(--gap-grid);
 }
 
