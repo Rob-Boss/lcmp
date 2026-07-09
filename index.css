@@ -52,10 +52,10 @@
 
 /* Reset and Viewport Lock */
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Lock scroll completely */
+    overflow-y: auto; /* Allow vertical scrolling if grid grows */
 }
 
 body {
@@ -72,8 +72,7 @@ body {
 .app-container {
     width: 100%;
     max-width: 1200px;
-    height: 100%;
-    max-height: 94vh; /* Fits perfectly in the viewport */
+    min-height: 94vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -132,9 +131,8 @@ body {
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr); /* 3 equal heights stretching with viewport */
+    grid-template-rows: repeat(4, 1fr); /* 4 rows */
     gap: var(--gap-grid);
-    min-height: 0; /* Prevents overflow inside flex container */
 }
 
 /* Bento Tile Base Styles */
@@ -162,6 +160,11 @@ body {
 .tile-tall-1x2 {
     grid-column: span 1;
     grid-row: span 2;
+}
+
+.tile-full-4x1 {
+    grid-column: span 4;
+    grid-row: span 1;
 }
 
 #tile-opportunities {
@@ -389,28 +392,99 @@ body {
 @media (max-width: 950px) {
     body {
         overflow: auto; /* Fall back to scroll if viewport is too small */
-        padding: 1.5rem 1rem;
-    }
-    
-    .app-container {
-        height: auto;
-        max-height: none;
-    }
-
+@media (max-width: 1024px) {
     .bento-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
     }
-    
-    .tile-wide-2x1, .tile-tall-1x2 {
-        grid-column: span 2 !important;
-        grid-row: auto !important;
-        min-height: 160px;
+    .tile-wide-2x1, .tile-tall-1x2, .tile-full-4x1 {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+    .app-container {
+        max-height: none;
+        height: auto;
     }
 }
 
+/* To-Do List Portal Styles ( Scandinavian Editorial style ) */
+.todo-list-portal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.todo-item-portal {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    background: rgba(253, 251, 247, 0.25);
+    border: 1px solid rgba(53, 69, 53, 0.04);
+    transition: var(--transition-standard);
+}
+
+.todo-item-portal:hover {
+    background: rgba(253, 251, 247, 0.6);
+    border-color: rgba(53, 69, 53, 0.1);
+}
+
+.todo-checkbox-portal {
+    flex-shrink: 0;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-text-portal {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--color-charcoal);
+}
+
+.todo-prefix-portal {
+    font-weight: 700;
+    color: #8C3B3B; /* Terracotta style prefix */
+    margin-right: 0.25rem;
+}
+
+.todo-desc-portal {
+    color: rgba(34, 40, 37, 0.85);
+}
+
+/* Bones for future link behavior (not active yet) */
+.todo-item-portal.has-link {
+    cursor: default; /* Kept default, not pointer yet */
+}
+
+/* Completed Tasks Style */
+.todo-item-portal.completed {
+    opacity: 0.6;
+}
+
+.todo-item-portal.completed .todo-prefix-portal {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.todo-item-portal.completed .todo-desc-portal {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
 /* 2. Phones */
-@media (max-width: 650px) {
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .tile-wide-2x1, .tile-tall-1x2, .tile-full-4x1 {
+        grid-column: span 1;
+    }
     .app-header {
         flex-direction: column;
         align-items: flex-start;

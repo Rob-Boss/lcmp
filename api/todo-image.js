@@ -104,6 +104,14 @@ export default async function handler(req, res) {
       }
     }
 
+
+    // Check if JSON format is requested
+    if (req.query.format === 'json') {
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      return res.status(200).json({ tasks });
+    }
+
     // 3. Render SVG (Scandinavian Editorial Light Theme)
     const svgWidth = 600;
     const itemSpacing = 16;
