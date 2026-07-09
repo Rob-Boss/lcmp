@@ -115,26 +115,26 @@ export default async function handler(req, res) {
     for (const task of tasks) {
       const textLines = wrapText(task.cleanText, 62);
       const itemHeight = textLines.length * lineHeight;
-      const checkboxY = currentY + 5; 
+      const boxTop = currentY - 12; // Shift up 4px for perfect vertical centering with text line
 
       // Render Checkbox / Indicator SVG
       let checkboxSvg = '';
       if (task.status === 'completed') {
         checkboxSvg = `
-          <!-- Completed Checkbox (Forest Green fill) -->
-          <rect x="22" y="${checkboxY - 13}" width="16" height="16" rx="4" fill="#1C352D" stroke="#1C352D" stroke-width="1.5" />
-          <path d="M 26 ${checkboxY - 6} L 29 ${checkboxY - 3} L 34 ${checkboxY - 9}" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Completed Checkbox (Deep Pine fill) -->
+          <rect x="22" y="${boxTop}" width="16" height="16" rx="4" fill="#1C352D" stroke="#1C352D" stroke-width="1.5" />
+          <path d="M 26 ${boxTop + 7} L 29 ${boxTop + 10} L 34 ${boxTop + 4}" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         `;
       } else if (task.status === 'in-progress') {
         checkboxSvg = `
           <!-- In Progress Checkbox (Soft gold circle/pie) -->
-          <circle cx="30" cy="${checkboxY - 5}" r="8" fill="none" stroke="#C29D66" stroke-width="2" />
-          <path d="M 30 ${checkboxY - 5} L 30 ${checkboxY - 11} A 6 6 0 0 1 36 ${checkboxY - 5} Z" fill="#C29D66" />
+          <circle cx="30" cy="${boxTop + 8}" r="8" fill="none" stroke="#C29D66" stroke-width="2" />
+          <path d="M 30 ${boxTop + 8} L 30 ${boxTop + 2} A 6 6 0 0 1 36 ${boxTop + 8} Z" fill="#C29D66" />
         `;
       } else {
         checkboxSvg = `
           <!-- Pending Checkbox (Muted gray-green border) -->
-          <rect x="22" y="${checkboxY - 13}" width="16" height="16" rx="4" fill="none" stroke="#738A80" stroke-width="1.5" />
+          <rect x="22" y="${boxTop}" width="16" height="16" rx="4" fill="none" stroke="#738A80" stroke-width="1.5" />
         `;
       }
 
@@ -147,17 +147,17 @@ export default async function handler(req, res) {
           // Completed task text (Muted green-gray, line-through)
           textLinesSvg += `<text x="52" y="${lineY}" fill="#738A80" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" opacity="0.5" text-decoration="line-through">${escapeXml(textLines[i])}</text>`;
         } else {
-          // Active task text (Bold prefix in Deep Pine, body in deep charcoal)
+          // Active task text (Bold prefix in Rust/Terracotta #A24135, body in forest sage #4A5C54)
           if (i === 0 && task.prefix && textLines[0].startsWith(task.prefix)) {
             const restOfFirstLine = textLines[0].slice(task.prefix.length);
             textLinesSvg += `
               <text x="52" y="${lineY}" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">
-                <tspan font-weight="600" fill="#1C352D">${escapeXml(task.prefix)}</tspan>
-                <tspan fill="#1A2521">${escapeXml(restOfFirstLine)}</tspan>
+                <tspan font-weight="bold" fill="#A24135">${escapeXml(task.prefix)}</tspan>
+                <tspan fill="#4A5C54">${escapeXml(restOfFirstLine)}</tspan>
               </text>
             `;
           } else {
-            textLinesSvg += `<text x="52" y="${lineY}" fill="#1A2521" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">${escapeXml(textLines[i])}</text>`;
+            textLinesSvg += `<text x="52" y="${lineY}" fill="#4A5C54" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">${escapeXml(textLines[i])}</text>`;
           }
         }
       }
