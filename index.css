@@ -248,10 +248,11 @@ body {
 /* Custom visual watermarks inside bento tiles */
 .tile-visual {
     position: absolute;
-    right: 1.25rem;
-    bottom: 3rem; /* Position above action link */
-    width: 140px;
-    height: 100px;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 220px;
+    height: 120px;
     opacity: 0.12;
     pointer-events: none;
     transition: var(--transition-standard);
@@ -259,14 +260,23 @@ body {
 }
 
 .tile-tall-1x2 .tile-visual {
-    right: 1.25rem;
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
     bottom: 3.5rem;
-    width: calc(100% - 2.5rem);
-    height: 160px;
+    top: auto;
+    transform: none;
+    width: calc(100% - 3rem);
+    height: 180px;
 }
 
 .bento-tile:hover .tile-visual {
-    transform: translateY(-4px) scale(1.03);
+    transform: translateY(calc(-50% - 4px)) scale(1.05);
+    opacity: 0.22;
+}
+
+.tile-tall-1x2:hover .tile-visual {
+    transform: translateY(-4px) scale(1.05);
     opacity: 0.22;
 }
 
