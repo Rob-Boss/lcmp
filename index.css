@@ -403,21 +403,21 @@ body {
 
 /* Card Footer and Interactive Links */
 .tile-footer {
-    margin-top: 1.25rem;
+    margin-top: 0;
     z-index: 2;
 }
 
 .action-link {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.25rem;
     font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #8C3B3B;
+    font-weight: 500;
+    font-size: 1.35rem; /* Make it a clean, elegant size */
+    color: var(--color-sand-muted);
     transition: var(--transition-standard);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
+    z-index: 3;
+    line-height: 1;
 }
 
 
@@ -448,7 +448,8 @@ body {
 }
 
 .bento-tile:hover .action-link {
-    gap: 0.4rem;
+    color: #8C3B3B;
+    transform: translate(2px, -2px);
 }
 
 /* App Footer */
