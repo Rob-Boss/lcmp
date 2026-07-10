@@ -123,8 +123,8 @@ async function fetchAddisonTasks() {
                 const prefixLower = task.prefix.toLowerCase();
                 if (prefixLower.includes('redesign')) {
                     targetUrl = 'https://lanterncamp.com';
-                } else if (prefixLower.includes('outreach')) {
-                    targetUrl = 'https://lantern-digital-press-kit.vercel.app/outreach';
+                } else if (prefixLower.includes('press release')) {
+                    targetUrl = 'https://docs.google.com/document/d/1n47rBjluecVO-s0OMAKJhLig9gNDcXoKxWXzTPAASn4/edit?usp=sharing';
                 }
 
                 if (targetUrl) {
