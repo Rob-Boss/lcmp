@@ -97,8 +97,7 @@ body {
 
 .brand-logo {
     font-size: 1.1rem;
-    margin-left: 0.4rem;
-    vertical-align: middle;
+    line-height: 1;
 }
 
 .portal-title {
@@ -111,12 +110,15 @@ body {
 }
 
 .brand-name {
+    display: inline-flex;
+    align-items: center;
     font-family: var(--font-sans);
     font-weight: 500;
     font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--accent-amber);
+    gap: 0.35rem;
 }
 
 .portal-subtitle {
