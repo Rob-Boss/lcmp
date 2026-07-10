@@ -200,6 +200,7 @@ export default async function handler(req, res) {
   <!-- Header -->
   <text x="22" y="32" fill="#738A80" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.5">LANTERN CAMP</text>
   <text x="22" y="52" fill="#1C352D" font-family="system-ui, -apple-system, sans-serif" font-size="15.5" font-weight="700">${escapeXml(fileName.replace('.md', '').replace('-todo', ' to-do list').toUpperCase())}</text>
+  <text x="${svgWidth - 22}" y="52" fill="#A24135" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="0.5" text-anchor="end">ORDERED BY URGENCY</text>
   <line x1="22" y1="62" x2="${svgWidth - 22}" y2="62" stroke="#E5E9E7" stroke-width="1" />
 
   <!-- Task Items -->
