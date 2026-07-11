@@ -26,7 +26,96 @@
 
         <!-- Bento Grid Layout -->
         <main class="bento-grid">
-            <!-- 1. Opportunities Hub (Wide 2x1) -->
+            <!-- 1. Analytics Dashboard (Wide 2x1) -->
+            <section id="tile-analytics" class="bento-tile tile-wide-2x1 card-glow-amber" onclick="navigateTo('https://lantern-analytics.vercel.app')">
+                <div class="tile-content">
+                    <span class="tile-badge badge-amber">Performance</span>
+                    <h2 class="tile-title">Analytics Dashboard</h2>
+                    <p class="tile-description">Monitor return on ad spend, homepage traffic, and high-level revenue insights.</p>
+                </div>
+                <div class="tile-visual">
+                    <svg viewBox="0 0 220 120" fill="none" stroke="#C29D66" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Left Side: Area/Line Graph -->
+                        <line x1="10" y1="105" x2="110" y2="105" stroke-linecap="round" />
+                        <line x1="10" y1="20" x2="10" y2="105" stroke-dasharray="2 2" />
+                        <path d="M 10 95 Q 30 85 50 60 T 90 45 T 110 20" stroke="#C29D66" stroke-width="2" stroke-linecap="round" />
+                        <path d="M 10 95 Q 30 85 50 60 T 90 45 T 110 20 L 110 105 L 10 105 Z" fill="#C29D66" fill-opacity="0.08" stroke="none" />
+                        <circle cx="110" cy="20" r="3" fill="#C29D66" />
+                        <circle cx="50" cy="60" r="2.5" fill="#C29D66" />
+
+                        <!-- Right Side: Bar Chart -->
+                        <line x1="130" y1="105" x2="210" y2="105" stroke-linecap="round" />
+                        <!-- Bar 1 -->
+                        <rect x="138" y="55" width="10" height="50" rx="1.5" fill="#C29D66" fill-opacity="0.2" />
+                        <!-- Bar 2 -->
+                        <rect x="156" y="35" width="10" height="70" rx="1.5" fill="#C29D66" fill-opacity="0.3" stroke-width="2" stroke="#C29D66" />
+                        <!-- Bar 3 -->
+                        <rect x="174" y="65" width="10" height="40" rx="1.5" fill="#C29D66" fill-opacity="0.2" />
+                        <!-- Bar 4 -->
+                        <rect x="192" y="15" width="10" height="90" rx="1.5" fill="#C29D66" fill-opacity="0.4" stroke-width="2" stroke="#C29D66" />
+                    </svg>
+                </div>
+                <div class="tile-footer">
+                    <span class="action-link">↗</span>
+                </div>
+            </section>
+
+            <!-- 2. PR & Media Outreach Tracker (Wide 2x1) -->
+            <section id="tile-pr-tracker" class="bento-tile tile-wide-2x1 card-glow-crm" onclick="navigateTo('https://lantern-living-documents.vercel.app/#/docs/media-outreach-tracker')">
+                <div class="tile-content">
+                    <span class="tile-badge badge-crm">PR Tracking</span>
+                    <h2 class="tile-title">PR & Media Outreach Tracker</h2>
+                    <p class="tile-description">Track journalists, outlets, pitching stages, scheduling status, and published features.</p>
+                </div>
+                <div class="tile-visual">
+                    <svg viewBox="0 0 220 120" fill="none" stroke="#4A5C54" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="200" height="100" rx="4" fill="#4A5C54" fill-opacity="0.03" />
+                        <!-- Table Header -->
+                        <line x1="10" y1="30" x2="210" y2="30" stroke-width="2" />
+                        <!-- Vertical column dividers -->
+                        <line x1="75" y1="10" x2="75" y2="110" stroke-dasharray="1 1" />
+                        <line x1="135" y1="10" x2="135" y2="110" stroke-dasharray="1 1" />
+
+                        <!-- Header text labels -->
+                        <line x1="18" y1="20" x2="55" y2="20" stroke-width="2" />
+                        <line x1="83" y1="20" x2="115" y2="20" stroke-width="2" />
+                        <line x1="143" y1="20" x2="185" y2="20" stroke-width="2" />
+
+                        <!-- Row 1 -->
+                        <line x1="10" y1="50" x2="210" y2="50" />
+                        <line x1="18" y1="40" x2="60" y2="40" />
+                        <line x1="83" y1="40" x2="110" y2="40" />
+                        <!-- Status badge: Published -->
+                        <rect x="143" y="35" width="55" height="11" rx="3" fill="#4A5C54" fill-opacity="0.2" />
+                        <line x1="149" y1="41" x2="192" y2="41" stroke-width="1" />
+
+                        <!-- Row 2 -->
+                        <line x1="10" y1="70" x2="210" y2="70" />
+                        <line x1="18" y1="60" x2="65" y2="60" />
+                        <line x1="83" y1="60" x2="105" y2="60" />
+                        <!-- Status badge: Pitched -->
+                        <rect x="143" y="55" width="55" height="11" rx="3" />
+                        <line x1="149" y1="61" x2="192" y2="61" stroke-width="1" />
+
+                        <!-- Row 3 -->
+                        <line x1="10" y1="90" x2="210" y2="90" />
+                        <line x1="18" y1="80" x2="50" y2="80" />
+                        <line x1="83" y1="80" x2="120" y2="80" />
+                        <!-- Status badge: Scheduled -->
+                        <rect x="143" y="75" width="55" height="11" rx="3" fill="#4A5C54" fill-opacity="0.1" />
+                        <line x1="149" y1="81" x2="192" y2="81" stroke-width="1" />
+
+                        <!-- Row 4 -->
+                        <line x1="18" y1="100" x2="58" y2="100" />
+                        <line x1="83" y1="100" x2="115" y2="100" />
+                    </svg>
+                </div>
+                <div class="tile-footer">
+                    <span class="action-link">↗</span>
+                </div>
+            </section>
+
+            <!-- 3. Opportunities Hub (Wide 2x1) -->
             <section id="tile-opportunities" class="bento-tile tile-wide-2x1 card-glow-terracotta" onclick="navigateTo('https://lantern-living-documents.vercel.app/opportunities.html')">
                 <div class="tile-content">
                     <div class="tile-header">
@@ -73,81 +162,6 @@
                         <rect x="150" y="52" width="50" height="30" rx="3" fill="#A24135" fill-opacity="0.05" />
                         <line x1="156" y1="60" x2="190" y2="60" stroke-width="2" />
                         <line x1="156" y1="68" x2="170" y2="68" />
-                    </svg>
-                </div>
-                <div class="tile-footer">
-                    <span class="action-link">↗</span>
-                </div>
-            </section>
-
-            <!-- 2. Analytics Dashboard (Wide 2x1) -->
-            <section id="tile-analytics" class="bento-tile tile-wide-2x1 card-glow-amber" onclick="navigateTo('https://lantern-analytics.vercel.app')">
-                <div class="tile-content">
-                    <span class="tile-badge badge-amber">Performance</span>
-                    <h2 class="tile-title">Analytics Dashboard</h2>
-                    <p class="tile-description">Monitor return on ad spend, homepage traffic, and high-level revenue insights.</p>
-                </div>
-                <div class="tile-visual">
-                    <svg viewBox="0 0 220 120" fill="none" stroke="#C29D66" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Left Side: Area/Line Graph -->
-                        <line x1="10" y1="105" x2="110" y2="105" stroke-linecap="round" />
-                        <line x1="10" y1="20" x2="10" y2="105" stroke-dasharray="2 2" />
-                        <path d="M 10 95 Q 30 85 50 60 T 90 45 T 110 20" stroke="#C29D66" stroke-width="2" stroke-linecap="round" />
-                        <path d="M 10 95 Q 30 85 50 60 T 90 45 T 110 20 L 110 105 L 10 105 Z" fill="#C29D66" fill-opacity="0.08" stroke="none" />
-                        <circle cx="110" cy="20" r="3" fill="#C29D66" />
-                        <circle cx="50" cy="60" r="2.5" fill="#C29D66" />
-
-                        <!-- Right Side: Bar Chart -->
-                        <line x1="130" y1="105" x2="210" y2="105" stroke-linecap="round" />
-                        <!-- Bar 1 -->
-                        <rect x="138" y="55" width="10" height="50" rx="1.5" fill="#C29D66" fill-opacity="0.2" />
-                        <!-- Bar 2 -->
-                        <rect x="156" y="35" width="10" height="70" rx="1.5" fill="#C29D66" fill-opacity="0.3" stroke-width="2" stroke="#C29D66" />
-                        <!-- Bar 3 -->
-                        <rect x="174" y="65" width="10" height="40" rx="1.5" fill="#C29D66" fill-opacity="0.2" />
-                        <!-- Bar 4 -->
-                        <rect x="192" y="15" width="10" height="90" rx="1.5" fill="#C29D66" fill-opacity="0.4" stroke-width="2" stroke="#C29D66" />
-                    </svg>
-                </div>
-                <div class="tile-footer">
-                    <span class="action-link">↗</span>
-                </div>
-            </section>
-
-            <!-- 3. Outreach Repository (Wide 2x1) -->
-            <section id="tile-outreach" class="bento-tile tile-wide-2x1 card-glow-presskit" onclick="navigateTo('https://lantern-digital-press-kit.vercel.app/outreach')">
-                <div class="tile-content">
-                    <span class="tile-badge badge-presskit">Public Relations</span>
-                    <h2 class="tile-title">Outreach Repository</h2>
-                    <p class="tile-description">Fact Sheet, Approved Copy, Founder Bios, etc.</p>
-                </div>
-                <div class="tile-visual">
-                    <svg viewBox="0 0 220 120" fill="none" stroke="#6B3444" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Photo 1 (Top Left) -->
-                        <rect x="10" y="10" width="55" height="45" rx="3" fill="#6B3444" fill-opacity="0.04" />
-                        <path d="M 15 45 L 28 30 L 40 40 L 48 35 L 60 45 Z" />
-                        <circle cx="22" cy="22" r="3" fill="#6B3444" fill-opacity="0.3" />
-
-                        <!-- Photo 2 (Bottom Left) -->
-                        <rect x="10" y="65" width="55" height="45" rx="3" fill="#6B3444" fill-opacity="0.04" />
-                        <path d="M 22 100 L 28 85 L 34 100 Z" />
-                        <path d="M 32 100 L 38 80 L 44 100 Z" />
-                        <path d="M 42 100 L 46 90 L 50 100 Z" />
-
-                        <!-- Text Blurb 1 (Top Right) -->
-                        <line x1="75" y1="15" x2="205" y2="15" stroke-width="2" />
-                        <line x1="75" y1="23" x2="195" y2="23" />
-                        <line x1="75" y1="31" x2="200" y2="31" />
-                        <line x1="75" y1="39" x2="150" y2="39" />
-
-                        <!-- Quote Block (Bottom Right) -->
-                        <rect x="75" y="55" width="135" height="55" rx="3" fill="#6B3444" fill-opacity="0.03" stroke-dasharray="2 2" />
-                        <!-- Quote Mark -->
-                        <path d="M 82 72 Q 82 66 86 66 L 86 70 Q 84 70 84 74 L 88 74 L 88 80 L 82 80 Z M 90 72 Q 90 66 94 66 L 94 70 Q 92 70 92 74 L 96 74 L 96 80 L 90 80 Z" fill="#6B3444" fill-opacity="0.2" stroke="none" />
-                        <!-- Quote Text -->
-                        <line x1="102" y1="72" x2="200" y2="72" />
-                        <line x1="84" y1="82" x2="200" y2="82" />
-                        <line x1="84" y1="92" x2="170" y2="92" />
                     </svg>
                 </div>
                 <div class="tile-footer">
@@ -203,62 +217,7 @@
                 </div>
             </section>
 
-            <!-- 5. PR & Media Outreach Tracker (Wide 2x1) -->
-            <section id="tile-pr-tracker" class="bento-tile tile-wide-2x1 card-glow-crm" onclick="navigateTo('https://lantern-living-documents.vercel.app/#/docs/media-outreach-tracker')">
-                <div class="tile-content">
-                    <span class="tile-badge badge-crm">PR Tracking</span>
-                    <h2 class="tile-title">PR & Media Outreach Tracker</h2>
-                    <p class="tile-description">Track journalists, outlets, pitching stages, scheduling status, and published features.</p>
-                </div>
-                <div class="tile-visual">
-                    <svg viewBox="0 0 220 120" fill="none" stroke="#4A5C54" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="10" y="10" width="200" height="100" rx="4" fill="#4A5C54" fill-opacity="0.03" />
-                        <!-- Table Header -->
-                        <line x1="10" y1="30" x2="210" y2="30" stroke-width="2" />
-                        <!-- Vertical column dividers -->
-                        <line x1="75" y1="10" x2="75" y2="110" stroke-dasharray="1 1" />
-                        <line x1="135" y1="10" x2="135" y2="110" stroke-dasharray="1 1" />
-
-                        <!-- Header text labels -->
-                        <line x1="18" y1="20" x2="55" y2="20" stroke-width="2" />
-                        <line x1="83" y1="20" x2="115" y2="20" stroke-width="2" />
-                        <line x1="143" y1="20" x2="185" y2="20" stroke-width="2" />
-
-                        <!-- Row 1 -->
-                        <line x1="10" y1="50" x2="210" y2="50" />
-                        <line x1="18" y1="40" x2="60" y2="40" />
-                        <line x1="83" y1="40" x2="110" y2="40" />
-                        <!-- Status badge: Published -->
-                        <rect x="143" y="35" width="55" height="11" rx="3" fill="#4A5C54" fill-opacity="0.2" />
-                        <line x1="149" y1="41" x2="192" y2="41" stroke-width="1" />
-
-                        <!-- Row 2 -->
-                        <line x1="10" y1="70" x2="210" y2="70" />
-                        <line x1="18" y1="60" x2="65" y2="60" />
-                        <line x1="83" y1="60" x2="105" y2="60" />
-                        <!-- Status badge: Pitched -->
-                        <rect x="143" y="55" width="55" height="11" rx="3" />
-                        <line x1="149" y1="61" x2="192" y2="61" stroke-width="1" />
-
-                        <!-- Row 3 -->
-                        <line x1="10" y1="90" x2="210" y2="90" />
-                        <line x1="18" y1="80" x2="50" y2="80" />
-                        <line x1="83" y1="80" x2="120" y2="80" />
-                        <!-- Status badge: Scheduled -->
-                        <rect x="143" y="75" width="55" height="11" rx="3" fill="#4A5C54" fill-opacity="0.1" />
-                        <line x1="149" y1="81" x2="192" y2="81" stroke-width="1" />
-
-                        <!-- Row 4 -->
-                        <line x1="18" y1="100" x2="58" y2="100" />
-                        <line x1="83" y1="100" x2="115" y2="100" />
-                    </svg>
-                </div>
-                <div class="tile-footer">
-                    <span class="action-link">↗</span>
-                </div>
-            </section>
-
-            <!-- 6. Living Documents (Tall 1x2) -->
+            <!-- 5. Living Documents (Tall 1x2) -->
             <section id="tile-docs" class="bento-tile tile-tall-1x2 card-glow-docs" onclick="navigateTo('https://lantern-living-documents.vercel.app')">
                 <div class="tile-content">
                     <span class="tile-badge badge-docs">Internal Wiki</span>
@@ -289,6 +248,47 @@
                         <path d="M 60 120 Q 75 108 90 122 T 120 110" />
                         <line x1="55" y1="145" x2="122" y2="145" />
                         <line x1="55" y1="153" x2="110" y2="153" />
+                    </svg>
+                </div>
+                <div class="tile-footer">
+                    <span class="action-link">↗</span>
+                </div>
+            </section>
+
+            <!-- 6. Outreach Repository (Wide 2x1) -->
+            <section id="tile-outreach" class="bento-tile tile-wide-2x1 card-glow-presskit" onclick="navigateTo('https://lantern-digital-press-kit.vercel.app/outreach')">
+                <div class="tile-content">
+                    <span class="tile-badge badge-presskit">Public Relations</span>
+                    <h2 class="tile-title">Outreach Repository</h2>
+                    <p class="tile-description">Fact Sheet, Approved Copy, Founder Bios, etc.</p>
+                </div>
+                <div class="tile-visual">
+                    <svg viewBox="0 0 220 120" fill="none" stroke="#6B3444" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Photo 1 (Top Left) -->
+                        <rect x="10" y="10" width="55" height="45" rx="3" fill="#6B3444" fill-opacity="0.04" />
+                        <path d="M 15 45 L 28 30 L 40 40 L 48 35 L 60 45 Z" />
+                        <circle cx="22" cy="22" r="3" fill="#6B3444" fill-opacity="0.3" />
+
+                        <!-- Photo 2 (Bottom Left) -->
+                        <rect x="10" y="65" width="55" height="45" rx="3" fill="#6B3444" fill-opacity="0.04" />
+                        <path d="M 22 100 L 28 85 L 34 100 Z" />
+                        <path d="M 32 100 L 38 80 L 44 100 Z" />
+                        <path d="M 42 100 L 46 90 L 50 100 Z" />
+
+                        <!-- Text Blurb 1 (Top Right) -->
+                        <line x1="75" y1="15" x2="205" y2="15" stroke-width="2" />
+                        <line x1="75" y1="23" x2="195" y2="23" />
+                        <line x1="75" y1="31" x2="200" y2="31" />
+                        <line x1="75" y1="39" x2="150" y2="39" />
+
+                        <!-- Quote Block (Bottom Right) -->
+                        <rect x="75" y="55" width="135" height="55" rx="3" fill="#6B3444" fill-opacity="0.03" stroke-dasharray="2 2" />
+                        <!-- Quote Mark -->
+                        <path d="M 82 72 Q 82 66 86 66 L 86 70 Q 84 70 84 74 L 88 74 L 88 80 L 82 80 Z M 90 72 Q 90 66 94 66 L 94 70 Q 92 70 92 74 L 96 74 L 96 80 L 90 80 Z" fill="#6B3444" fill-opacity="0.2" stroke="none" />
+                        <!-- Quote Text -->
+                        <line x1="102" y1="72" x2="200" y2="72" />
+                        <line x1="84" y1="82" x2="200" y2="82" />
+                        <line x1="84" y1="92" x2="170" y2="92" />
                     </svg>
                 </div>
                 <div class="tile-footer">
