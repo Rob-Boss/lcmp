@@ -474,12 +474,30 @@ body {
     }
     .bento-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
+        grid-auto-rows: auto;
     }
     .tile-wide-2x1, .tile-tall-1x2, .tile-full-4x1 {
         grid-column: span 2;
         grid-row: auto;
     }
+    
+    /* Specific ID overrides for 2-column grid layout */
+    #tile-opportunities,
+    #tile-analytics,
+    #tile-outreach,
+    #tile-pr-tracker,
+    #tile-addison-todo {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+    
+    #tile-photo-selector,
+    #tile-docs {
+        grid-column: span 1;
+        grid-row: auto;
+        min-height: 320px; /* Keep height for visual elements to not overflow */
+    }
+    
     .app-container {
         max-height: none;
         height: auto;
@@ -568,30 +586,75 @@ body {
 
 /* 2. Phones */
 @media (max-width: 600px) {
-    .bento-grid {
-        grid-template-columns: 1fr;
-    }
-    .tile-wide-2x1, .tile-tall-1x2, .tile-full-4x1 {
-        grid-column: span 1;
-    }
-    .app-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+    body {
+        padding: 1rem;
     }
     
-    .portal-title {
-        font-size: 1.75rem;
-    }
-    
-    .bento-grid {
-        grid-template-columns: 1fr;
+    .app-container {
+        padding-bottom: 1rem;
         gap: 1rem;
     }
     
-    .bento-tile {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+    }
+    
+    .tile-wide-2x1, .tile-tall-1x2, .tile-full-4x1 {
+        grid-column: span 1;
+    }
+    
+    /* Specific ID overrides for 1-column mobile grid layout */
+    #tile-opportunities,
+    #tile-analytics,
+    #tile-outreach,
+    #tile-pr-tracker,
+    #tile-photo-selector,
+    #tile-docs,
+    #tile-addison-todo {
         grid-column: span 1 !important;
-        padding: 1.25rem;
+        grid-row: auto !important;
+        min-height: auto; /* Allow items to adjust height to fit content */
+    }
+    
+    .app-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .brand-name {
+        font-size: 0.7rem;
+    }
+    
+    .portal-title {
+        font-size: 1.6rem;
+    }
+    
+    .portal-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .bento-tile {
+        padding: 1.1rem 1.2rem;
+    }
+    
+    .tile-visual {
+        display: none !important; /* Hide visuals on mobile to maximize readability */
+    }
+    
+    .todo-list-portal {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .todo-item-portal {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .todo-text-portal {
+        font-size: 0.85rem;
     }
     
     .blueprint-bg {
