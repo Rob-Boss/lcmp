@@ -129,12 +129,6 @@ async function fetchAddisonTasks() {
                     targetUrl = 'https://ads.google.com/aw/accountaccess/users?ocid=8347981124&euid=834806593&__u=9027662457&uscid=8347981124&__c=9366794276&authuser=0&subid=us-en-awhp-g-aw-c-home-signin-bgc%21o2-aluminum%7Cib%3A7219774260%7Cib%3A9135545970%7Cib%3A3088949730%7C-ahpm-0000000179-0000000001';
                 } else if (prefixLower.includes('workspace photo')) {
                     targetUrl = 'https://admin.google.com';
-                } else if (prefixLower.includes('boston globe')) {
-                    targetUrl = 'https://lantern-living-documents.vercel.app/#/docs/media-outreach-tracker';
-                } else if (prefixLower.includes('operations tools')) {
-                    targetUrl = 'https://lantern-operations.vercel.app';
-                } else if (prefixLower.includes('photography trade')) {
-                    targetUrl = 'https://lantern-living-documents.vercel.app/#/docs/media-outreach-tracker';
                 }
 
                 if (targetUrl) {
