@@ -131,6 +131,8 @@ async function fetchAddisonTasks() {
                     targetUrl = 'https://ads.google.com/aw/accountaccess/users?ocid=8347981124&euid=834806593&__u=9027662457&uscid=8347981124&__c=9366794276&authuser=0&subid=us-en-awhp-g-aw-c-home-signin-bgc%21o2-aluminum%7Cib%3A7219774260%7Cib%3A9135545970%7Cib%3A3088949730%7C-ahpm-0000000179-0000000001';
                 } else if (prefixLower.includes('workspace photo')) {
                     targetUrl = 'https://admin.google.com';
+                } else if (prefixLower.includes('carla tracy invoice')) {
+                    targetUrl = 'https://drive.google.com/file/d/1juRN-8P6qN7-doBXXVIPBBKLLmsAsv_g/view?usp=sharing';
                 } else if (prefixLower.includes('carla tracy')) {
                     targetUrl = 'https://mews.li/';
                 } else if (prefixLower.includes('grasshopper')) {
