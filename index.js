@@ -137,6 +137,8 @@ async function fetchAddisonTasks() {
                     targetUrl = 'https://mews.li/';
                 } else if (prefixLower.includes('grasshopper')) {
                     targetUrl = 'https://grasshopper.com';
+                } else if (prefixLower.includes('siteminder')) {
+                    targetUrl = 'https://app.siteminder.com';
                 }
 
                 if (targetUrl) {
