@@ -141,6 +141,8 @@ async function fetchAddisonTasks() {
                     targetUrl = 'https://app.siteminder.com';
                 } else if (prefixLower.includes('room and wild') || prefixLower.includes('room + wild') || prefixLower.includes('room & wild')) {
                     targetUrl = 'https://docs.google.com/document/d/1v3CnETqrXei0ggTzVOHCWM03yDlPp_CuiD0o5-WOaQo/edit?usp=sharing';
+                } else if (prefixLower.includes('alyssa giacobbe') || prefixLower.includes('alyssa')) {
+                    targetUrl = 'https://mail.google.com/mail/u/0/#inbox/19fae62431ffc920';
                 }
 
                 if (targetUrl) {
