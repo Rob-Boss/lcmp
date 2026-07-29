@@ -139,6 +139,8 @@ async function fetchAddisonTasks() {
                     targetUrl = 'https://grasshopper.com';
                 } else if (prefixLower.includes('siteminder')) {
                     targetUrl = 'https://app.siteminder.com';
+                } else if (prefixLower.includes('room and wild') || prefixLower.includes('room + wild') || prefixLower.includes('room & wild')) {
+                    targetUrl = 'https://docs.google.com/document/d/1v3CnETqrXei0ggTzVOHCWM03yDlPp_CuiD0o5-WOaQo/edit?usp=sharing';
                 }
 
                 if (targetUrl) {
