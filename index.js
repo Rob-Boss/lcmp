@@ -143,6 +143,8 @@ async function fetchAddisonTasks() {
                     targetUrl = 'https://docs.google.com/document/d/1v3CnETqrXei0ggTzVOHCWM03yDlPp_CuiD0o5-WOaQo/edit?usp=sharing';
                 } else if (prefixLower.includes('alyssa giacobbe') || prefixLower.includes('alyssa')) {
                     targetUrl = 'https://mail.google.com/mail/u/0/#inbox/19fae62431ffc920';
+                } else if (prefixLower.includes('photo selector') || prefixLower.includes('photo management') || prefixLower.includes('photo ingester') || prefixLower.includes('master photo selector')) {
+                    targetUrl = 'https://lantern-digital-press-kit.vercel.app/photo-selector.html';
                 }
 
                 if (targetUrl) {
